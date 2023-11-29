@@ -29,16 +29,27 @@
     })();
 
   </script>
- 
-
+  <script type="module">
+    const modelViewer2 = document.querySelector("#table");
+    const annotationClicked = (annotation) => {
+      let dataset = annotation.dataset;
+      modelViewer2.cameraTarget = dataset.target;
+      modelViewer2.cameraOrbit = dataset.orbit;
+      modelViewer2.fieldOfView = '45deg';
+    }
+  
+    modelViewer2.querySelectorAll('button').forEach((hotspot) => {
+      hotspot.addEventListener('click', () => annotationClicked(hotspot));
+    });
+  </script>
   </head>
+
   <body>
     <section class="header">
       <img src="./images/cover.jpg" width="100%" height="100%" />
     </section>
     <h2> Gallery</h2>
     <section class="gallery">
-       
       <div class="product">
         <model-viewer class="model" src="./models/Chair.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="2" shadow-softness="1">
             <button class="Hotspot" slot="hotspot-1" data-position="1.003151477643733m 0.05049474923351005m -0.3058741472695372m" data-normal="-0.5708211689198158m 0.8090183741492798m -0.14018724407688246m" data-visibility-attribute="visible">
@@ -88,7 +99,7 @@
         <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
       </div>
       <div class="product">
-        <model-viewer id ="table"class="model"
+        <model-viewer id ="table" class="model"
           src="./models/table.glb"
           alt="A 3D model of a chair"
           ar
@@ -96,7 +107,7 @@
           camera-controls shadow-intensity="2" shadow-softness="1" interpolation-decay="200"
         >
         <button class="view-button" slot="hotspot-0" data-position="-0.0569m 0.0969m -0.1398m" data-normal="-0.5829775m 0.2863482m -0.7603565m" data-orbit="-50.94862deg 84.56856deg 0.06545582m" data-target="-0.04384604m 0.07348397m -0.1213202m">
-          The Book
+          Multi Layered Racks
         </button>      
       </model-viewer>
         <h3> Home Office Table</h3>
