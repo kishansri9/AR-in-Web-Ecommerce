@@ -40,3 +40,10 @@ box-shadow: 2px;
 height: 300px;
     
 }
+.annotation{
+    background-color: #888888;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
