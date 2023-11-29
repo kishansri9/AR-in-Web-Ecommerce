@@ -4,36 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Model Viewer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
   </head>
   <body>
-    <section class="header"> 
-        <img src="./images/cover.jpg" width="100%" height="100%">
-
+    <section class="header">
+      <img src="./images/cover.jpg" width="100%" height="100%" />
     </section>
-    <model-viewer
-      src="./models/Chair.glb"
-      alt="A 3D model of a chair"
-      ar
-      auto-rotate
-      camera-controls
-    ></model-viewer>
-
-    <model-viewer src="./models/chair2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-    </model-viewer>
-    
+    <h2> Gallery</h2>
+    <section class="gallery">
+       
+      <div class="product">
+        <model-viewer class="model" src="./models/Chair.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="2" shadow-softness="1">
+            <button class="Hotspot" slot="hotspot-1" data-position="1.003151477643733m 0.05049474923351005m -0.3058741472695372m" data-normal="-0.5708211689198158m 0.8090183741492798m -0.14018724407688246m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Wheels</div>
+            </button><button class="Hotspot" slot="hotspot-2" data-position="0.8021748685284132m 0.3929097010442782m -0.32287034247173674m" data-normal="0.3304713409713212m -0.1490659905142351m -0.9319699690808855m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Height adjustable grip</div>
+            </button>
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            
+        </model-viewer>
+        
+        <h3> Office Chair</h3>
+        <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
+      </div>
+      <div class="product">
+        <model-viewer class="model" src="./models/chair2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1">
+            <button class="Hotspot" slot="hotspot-1" data-position="0.21909490338880766m 1.30365620610502m -0.44732946654504685m" data-normal="-0.3715133586739838m 0.24220152137740358m 0.8962791124249451m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Comfortable neck space</div>
+            </button>
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            
+        </model-viewer>
+        
+        <h3> Office Chair</h3>
+        <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
+      </div>
+      <div class="product">
+        <model-viewer class="model"
+          src="./models/sofa.glb"
+          alt="A 3D model of a chair"
+          ar
+          auto-rotate
+          camera-controls
+        ></model-viewer>
+        <h3> Office Chair</h3>
+        <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
+      </div>
+      <div class="product">
+        <model-viewer class="model"
+          src="./models/table.glb"
+          alt="A 3D model of a chair"
+          ar
+          auto-rotate
+          camera-controls
+        ></model-viewer>
+        <h3> Office Chair</h3>
+        <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
+      </div>
+    </section>
   </body>
 </html>
