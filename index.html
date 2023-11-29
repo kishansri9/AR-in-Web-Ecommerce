@@ -66,13 +66,21 @@
         <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
       </div>
       <div class="product">
-        <model-viewer class="model"
-          src="./models/table.glb"
-          alt="A 3D model of a chair"
-          ar
-          auto-rotate
-          camera-controls
-        ></model-viewer>
+        <model-viewer src="table.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1" environment-image="legacy" skybox-image="legacy" shadow-softness="1">
+          <button class="Hotspot" slot="hotspot-1" data-position="-0.9343122932930492m 3.228618929170587m 0.8658485519121756m" data-normal="2.4551127681295824e-7m 0.9999999999999434m -2.3051986767980987e-7m" data-visibility-attribute="visible">
+              <div class="HotspotAnnotation">Spacious multi layered racks</div>
+          </button>
+          <div class="progress-bar hide" slot="progress-bar">
+              <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">
+              View in your space
+          </button>
+          <div id="ar-prompt">
+              <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+          </div>
+      </model-viewer>
+      
         <h3> Office Chair</h3>
         <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
       </div>
