@@ -9,7 +9,6 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     >
-  
 </script>
 
 <script>
@@ -42,6 +41,21 @@
       hotspot.addEventListener('click', () => annotationClicked(hotspot));
     });
   </script>
+
+  <script type="module">
+    const modelViewer2 = document.querySelector("#sofa");
+    const annotationClicked = (annotation) => {
+      let dataset = annotation.dataset;
+      modelViewer2.cameraTarget = dataset.target;
+      modelViewer2.cameraOrbit = dataset.orbit;
+      modelViewer2.fieldOfView = '45deg';
+    }
+  
+    modelViewer2.querySelectorAll('button').forEach((hotspot) => {
+      hotspot.addEventListener('click', () => annotationClicked(hotspot));
+    });
+  </script>
+
   </head>
 
   <body>
@@ -54,7 +68,8 @@
         <model-viewer class="model" src="./models/Chair.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls poster="poster.webp" shadow-intensity="2" shadow-softness="1">
             <button class="Hotspot" slot="hotspot-1" data-position="1.003151477643733m 0.05049474923351005m -0.3058741472695372m" data-normal="-0.5708211689198158m 0.8090183741492798m -0.14018724407688246m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Wheels</div>
-            </button><button class="Hotspot" slot="hotspot-2" data-position="0.8021748685284132m 0.3929097010442782m -0.32287034247173674m" data-normal="0.3304713409713212m -0.1490659905142351m -0.9319699690808855m" data-visibility-attribute="visible">
+            </button>
+            <button class="Hotspot" slot="hotspot-2" data-position="0.8021748685284132m 0.3929097010442782m -0.32287034247173674m" data-normal="0.3304713409713212m -0.1490659905142351m -0.9319699690808855m" data-visibility-attribute="visible">
                 <div class="HotspotAnnotation">Height adjustable grip</div>
             </button>
             <div class="progress-bar hide" slot="progress-bar">
@@ -88,13 +103,17 @@
         <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
       </div>
       <div class="product">
-        <model-viewer class="model"
-          src="./models/sofa.glb"
-          alt="A 3D model of a chair"
-          ar
-          auto-rotate
-          camera-controls shadow-intensity="2" shadow-softness="1"
-        ></model-viewer>
+        <model-viewer id="sofa" src="./models/sofa.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="1.09">
+          <button class="view-button" slot="hotspot-7" data-position="-0.7455410705416821m 0.8357255025292056m 0.5358569140207496m" data-normal="0.6230967303914388m -0.7751943052189817m 0.10403967383435518m" data-visibility-attribute="visible"> Sturdy & durable </button>
+          <div class="progress-bar hide" slot="progress-bar">
+              <div class="update-bar"></div>
+          </div>
+          <button slot="ar-button" id="ar-button">
+              View in your space
+          </button>
+          
+      </model-viewer>
+      
         <h3> Sofa </h3>
         <p> Adjust the height and angle to sit really comfortably, and let the game begin. </p>
       </div>
